@@ -1,6 +1,6 @@
+cmake_minimum_required(VERSION 3.2)
 cmake_policy(SET CMP0048 NEW)
 project("DSP-SLAM")
-cmake_minimum_required(VERSION 3.2)
 
 # c++ version
 set(CMAKE_CXX_STANDARD 17)
@@ -16,7 +16,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O3 -march=native")
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
-find_package(OpenCV 3.2 REQUIRED)
+set(OpenCV_DIR ${CMAKE_SOURCE_DIR}/Thirdparty/opencv/build)
+find_package(OpenCV 3.2 REQUIRED NO_DEFAULT_PATH)
 find_package(Eigen3 3.4.0 REQUIRED)
 find_package(Pangolin REQUIRED)
 
